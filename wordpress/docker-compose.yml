@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+
+  www:
+    build: ./docker/nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./app:/var/www/html
+    depends_on:
+      - php
+      - db
+
+  php:
+    build: ./docker/php
+    expose:
+      - 9000
+    volumes:
+      - ./app:/var/www/html
+    env_file:
+      - .env
+
+  db:
+    image: mysql:5.7
+    volumes:
+      - ./db:/var/lib/mysql
+    env_file:
+      - .env
