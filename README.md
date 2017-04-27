@@ -82,4 +82,4 @@ all_node_1 exited with code 0
 all_mysql_1 exited with code 0
 ```
 
-全部 `0` なら成功。胸を張って来てください。
+全部 `0` なら成功。胸を張ってお越しください。
