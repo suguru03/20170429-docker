@@ -27,7 +27,9 @@ GUIです、大丈夫です。
 
 ### `docker-compose.yml` ファイルを作成
 
-以下の内容でファイルを作成してください。コピペでどうぞ。
+以下の内容でファイルを作成してください。コピペでどうぞ。ダウンロードでもいいです。
+
+- [docker-compose.yml](https://raw.githubusercontent.com/ginpei/20170429-docker/master/all/docker-compose.yml)
 
 ```yml
 version: "3"
