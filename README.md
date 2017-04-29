@@ -9,9 +9,8 @@
 以下のステップで作業してください。
 
 1. Docker本体のインストール
-2. ディレクトリ作成
-3. `docker-compose.yml` ファイルを作成
-4. はじめてのコンテナ起動
+2. gitでファイルダウンロード
+3. はじめてのコンテナ起動
 
 ### Docker本体のインストール
 
@@ -21,43 +20,18 @@
 
 GUIです、大丈夫です。
 
-### ディレクトリ作成
+### gitでファイルダウンロード
 
-作業用にひとつディレクトリを作成して、コンソールで開いてください。 `cd` でアレするやつ。
-
-### `docker-compose.yml` ファイルを作成
-
-以下の内容でファイルを作成してください。コピペでどうぞ。
-
-```yml
-version: "3"
-
-services:
-  nginx:
-    image: nginx:1.12
-    command: "true"
-  php:
-    image: php:7.0-fpm
-    command: "true"
-  mysql:
-    image: mysql:5.7
-    command: "true"
-  rails:
-    image: ruby:2.3.3
-    command: "true"
-  db:
-    image: postgres:9.6.2
-    command: "true"
-  node:
-    image: node:6.10.2
-    command: "true"
+```bash
+$ git clone git@github.com:ginpei/20170429-docker.git
 ```
 
 ### はじめてのコンテナ起動
 
-コンソールで作成したディレクトリへ移動して、以下のコマンドで起動します。初回はめっちゃダウンロードして、めっちゃ時間かかります。漫画でも読んでててください。
+`all` というディレクトリがあるので、コンソールでその中へ移動してください。その後Dockerを起動します。初回はめっちゃダウンロードして、めっちゃ時間かかります。めっちゃ漫画でも読んでててください。
 
 ```bash
+$ cd 20170429-docker/all
 $ docker-compose up
 ```
 
@@ -80,4 +54,4 @@ all_node_1 exited with code 0
 all_mysql_1 exited with code 0
 ```
 
-全部 `0` なら成功。胸を張って来てください。
+全部 `0` なら成功。胸を張ってお越しください。
