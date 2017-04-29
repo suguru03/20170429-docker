@@ -1,24 +1,38 @@
-# README
+# Docker for Rails Example
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Get Started
 
-Things you may want to cover:
+Prepare database.
 
-* Ruby version
+```
+$ docker-compose up -d
+$ docker-compose run rails rake db:create db:migrate
+$ docker-compose stop
+```
 
-* System dependencies
+Then up and open `http://localhost`.
 
-* Configuration
+```
+$ docker-compose up
+```
 
-* Database creation
+## Problems?
 
-* Database initialization
+### When Rails complains a server is already running 
 
-* How to run the test suite
+```
+rails_1  | A server is already running. Check /myapp/tmp/pids/server.pid.
+rails_1  | => Booting Puma
+rails_1  | => Rails 5.0.0.1 application starting in development on http://0.0.0.0:80
+rails_1  | => Run `rails server -h` for more startup options
+rails_1  | Exiting
+rails_rails_1 exited with code 1
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+You need to remove the pid file.
 
-* Deployment instructions
+```
+$ rm tmp/pids/server.pid
+```
 
-* ...
+Then run `docker-compose up` as usual.
